@@ -1,14 +1,17 @@
 class SessionsController < ApplicationController
-  def new
+  def create
+    @user = User.find_by(email: params[:email])
+    if @user and @user.authenticate(params[:password])
+      #logged in
+      session[:user_id] = @user.id
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
-  def create
-    @user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
-
-    return render action: 'new' unless @user
-
-    #logged in
-    session[:user_id] = @user.id
-    redirect_to weather_path
+  def destroy
+    reset_session
+    redirect_to root_path
   end
 end
