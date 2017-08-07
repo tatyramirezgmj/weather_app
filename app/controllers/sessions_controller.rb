@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if @user and @user.authenticate(params[:password])
       #logged in
       session[:user_id] = @user.id
-      redirect_to dashboard_path
+      redirect_to root_path
     else
       render :new
     end
@@ -12,6 +12,6 @@ class SessionsController < ApplicationController
 
   def destroy
     reset_session
-    redirect_to root_path
+    redirect_to login_path
   end
 end

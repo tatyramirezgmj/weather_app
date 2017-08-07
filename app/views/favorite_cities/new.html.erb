@@ -1,0 +1,6 @@
+<h1>Add City</h1>
+<%= form_for(@favorite) do |f|%>
+<%= f.label :city_name %>
+<%= f.text_field :city_name %>
+<%= f.submit 'Add Favorite City' %>
+<% end %>

@@ -11,12 +11,11 @@ class UsersController < ApplicationController
     @user= User.new(allowed_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to dashbord_path, notice: 'Created user'
+      redirect_to root_path, notice: 'Created user'
     else
       render :new
     end
   end
-
 
   private
   def allowed_params

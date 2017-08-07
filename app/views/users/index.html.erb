@@ -1,4 +1,4 @@
 <%= current_user.email %>
-
-
-<%= link_to 'Log Out', '/logout'%>
+<% current_user.favorite_cities.each do |favorite_city| %>
+<%= link_to favorite_city.city_name, favorite_city_path(favorite_city.id) %>
+<% end %>

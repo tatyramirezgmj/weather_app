@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  root 'sessions#new'
   resource :users
+  resources :favorite_cities
+  root 'users#index' 
 
-  get 'users/new'
-
-  get '/login'  => 'sessions#new'
+  get 'users/new', as: 'signup'
+  get '/login'  => 'sessions#new', as: "login"
   post '/login' => 'sessions#create'
-  get '/logout' => 'sessions#destroy'
-  #
-  get '/dashboard' => 'users#index', as: 'dashboard'
-  #
+  get '/logout' => 'sessions#destroy', as: 'logout'
+
 end
