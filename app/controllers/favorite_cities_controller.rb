@@ -20,6 +20,12 @@ class FavoriteCitiesController < ApplicationController
     @current_weather = JSON.parse(weather_conditions)
   end
 
+  def destroy
+    @favorite_city = current_user.favorite_cities.find(params[:id])
+    @favorite_city.destroy!
+    redirect_to root_path, notice: "Favorite city deleted"
+  end
+
   private
   def favorite_params
     params.require(:favorite_city).permit(:city_name, :user_id)

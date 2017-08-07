@@ -1,4 +1,5 @@
 <%= current_user.email %>
 <% current_user.favorite_cities.each do |favorite_city| %>
 <%= link_to favorite_city.city_name, favorite_city_path(favorite_city.id) %>
+<%= link_to 'delete', favorite_city_path(favorite_city.id), :method => :delete, data: {:confirm => "You sure?"} ,:title => "Delete #{favorite_city.city_name}" %>
 <% end %>
