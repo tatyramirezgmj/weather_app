@@ -1,3 +1,15 @@
 <h1><%= @favorite_city.city_name %></h1>
 
-<%= @current_weather %>
+<h3> Description: <%= @current_weather["weather"][0]["description"]%> </h3>
+
+<h3> Main: <%= @current_weather["weather"][0]["main"]%> </h3>
+
+<h3> Current temperature: <%= ((@current_weather["main"]["temp"] - 273) * 9 / 5 + 32).round%> &#8457;</h3>
+
+<h3> Min temperature: <%= ((@current_weather["main"]["temp_min"] - 273) * 9 / 5 + 32).round%> &#8457;</h3>
+
+<h3> Max temperature: <%= ((@current_weather["main"]["temp_max"] - 273) * 9 / 5 + 32).round%> &#8457;</h3>
+
+<h3> Humidity: <%= @current_weather["main"]["humidity"]%> %  </h3>
+
+<h3> Wind speed: <%= @current_weather["wind"]["speed"]%></h3>

@@ -19,7 +19,7 @@ class FavoriteCitiesController < ApplicationController
     weather_conditions= @response.body
     @current_weather = JSON.parse(weather_conditions)
   end
-
+  
   def destroy
     @favorite_city = current_user.favorite_cities.find(params[:id])
     @favorite_city.destroy!
