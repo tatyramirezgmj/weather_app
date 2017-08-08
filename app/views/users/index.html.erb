@@ -1,12 +1,9 @@
-
+<div class="notice"><%= flash[:notice] %></div>
 <h2 class="welcome">Welcome <%= current_user.name %></h2>
-
-
 <% current_user.favorite_cities.each do |favorite_city| %>
 <div>
   <div class="col-sm-6 col-md-4 ">
     <div class="thumbnail">
-
       <div class="caption cities-index">
         <h1><%= link_to favorite_city.city_name, favorite_city_path(favorite_city.id) %></h1>
 

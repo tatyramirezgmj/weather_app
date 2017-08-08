@@ -11,8 +11,9 @@ class UsersController < ApplicationController
     @user= User.new(allowed_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice: 'Created user'
+      redirect_to root_path, notice: 'You have succesfully sign up.'
     else
+      flash[:notice] = "Please check that your passwords match."
       render :new
     end
   end

@@ -32,6 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Use httparty for json
 gem 'httparty', '~> 0.15.6'
 gem 'hirb'
+gem 'geocoder'
+gem 'flickr.rb'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -43,6 +45,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem "rspec-rails"
+  gem 'faker', '~> 1.8', '>= 1.8.4'
   gem "launchy"
 end
 

@@ -1,0 +1,3 @@
+example_id                                             | status | run_time       |
+------------------------------------------------------ | ------ | -------------- |
+./spec/features/user_views_their_profiles_spec.rb[1:1] | failed | 0.0457 seconds |

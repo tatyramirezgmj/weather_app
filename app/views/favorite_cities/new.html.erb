@@ -1,6 +1,18 @@
-<h1>Add City</h1>
-<%= form_for(@favorite) do |f|%>
-<%= f.label :city_name %>
-<%= f.text_field :city_name %>
-<%= f.submit 'Add Favorite City' %>
-<% end %>
+<div>
+  <div class="col-sm-6 col-md-4 ">
+    <div class="thumbnail">
+      <div class="caption">
+        <h1>Add City</h1>
+        <% @favorite.errors.full_messages.each do |e| %>
+        <p class='errors'><%=  e %></p>
+        <%end%>
+        <%= form_for(@favorite) do |f|%>
+        <%= f.label :city_name %>
+        <%= f.text_field :city_name, id: :city %>
+        <%= f.submit 'Add Favorite City' %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

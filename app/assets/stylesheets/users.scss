@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// show page index users
 .welcome {
   text-align: center;
   font-size: 50px;
@@ -25,4 +26,32 @@
 .cities-index h3 {
   font-size: 30px;
   padding-bottom: 10px;
+}
+
+
+// new user sign-up
+.inputs-sign-up{
+  display: initial;
+  margin-left: 10%;
+  margin-top: 5%;
+  margin-right: 5%;
+}
+.registration-sign-up{
+  background: rgba(235, 235, 235, 0.64);
+  padding-bottom: 5%;
+  border-radius: 5%;
+}
+.registration-sign-up h1{
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5%;
+  padding-top: 2%;
+
+}
+
+.registration-sign-up form{
+  font-size: 15px;
+  display: grid;
+  justify-content: center;
 }

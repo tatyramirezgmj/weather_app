@@ -4,8 +4,8 @@ class FavoriteCitiesController < ApplicationController
   end
 
   def create
-    @favorites = current_user.favorite_cities.build(favorite_params)
-    if @favorites.save
+    @favorite = current_user.favorite_cities.build(favorite_params)
+    if @favorite.save
       redirect_to root_path, notice: 'Favorite city saved'
     else
       render :new
@@ -19,7 +19,7 @@ class FavoriteCitiesController < ApplicationController
     weather_conditions= @response.body
     @current_weather = JSON.parse(weather_conditions)
   end
-  
+
   def destroy
     @favorite_city = current_user.favorite_cities.find(params[:id])
     @favorite_city.destroy!

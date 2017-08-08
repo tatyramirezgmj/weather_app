@@ -1,22 +1,41 @@
-<h1>Sign Up</h1>
-<%= form_with(model: @user, url: users_path(@user)) do |f| %>
-<p>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</p>
+<div class="container">
+  <div class="registration-sign-up">
+    <div class="notice"><%= flash[:notice] %></div>
+    <h1>Sign Up</h1>
+    <%= form_with(model: @user, url: users_path(@user)) do |f| %>
 
-<p>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-</p>
-<p>
-  <%= f.label  :password %>
-  <%= f.password_field :password %>
-</p>
+    <div class="box">
+      <div class="form-group row ">
+        <span class="col-sm-2 col-form-label inputs-sign-up">
+          <%= f.label :name %>
+          <%= f.text_field :name, id: :Name %>
+        </span>
+      </div>
 
-<p>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-</p>
-<%= f.submit %>
-<% end %>
+      <div class="form-group row ">
+        <span class="col-sm-1 col-form-label inputs-sign-up">
+          <%= f.label :email %>
+          <%= f.text_field :email , id: :Email %>
+        </span>
+      </div>
+
+      <div class="form-group row ">
+        <span class="col-sm-2 col-form-label inputs-sign-up">
+          <%= f.label  :password %>
+          <%= f.password_field :password, id: :Password%>
+        </span>
+      </div>
+
+      <div class="form-group row ">
+        <span class="col-sm-2 col-form-label inputs-sign-up">  <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation , id: :Password_confirmation %>
+        </span>
+      </div>
+
+      <p class="button">
+        <%= f.submit "Sign Up",  class: "btn btn-primary" %>
+      </p>
+      <% end %>
+    </div>
+  </div>
+</div>
