@@ -1,3 +1,28 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.welcome {
+  text-align: center;
+  font-size: 50px;
+  padding: 15px 0px 20px 0px;
+}
+
+.cities-index {
+  text-align: center;
+}
+
+.cities-index h1 a{
+  font-size: 40px;
+  color: rgb(93, 209, 224);
+  text-decoration: none;
+}
+
+.cities-index h1 a:hover {
+  color: rgb(50, 141, 153);
+}
+
+.cities-index h3 {
+  font-size: 30px;
+  padding-bottom: 10px;
+}
