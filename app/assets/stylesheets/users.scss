@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/// navbar
+.nav-bar li:hover{
+   background-color: rgb(208, 208, 208);
+}
+.nav-bar li:active {
+  background-color: rgb(193, 193, 193);
+}
 // show page index users
 .welcome {
   text-align: center;

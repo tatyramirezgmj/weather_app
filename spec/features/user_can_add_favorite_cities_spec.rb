@@ -62,13 +62,4 @@ RSpec.feature "User Can Add Favorite Cities", type: :feature do
     click_link "Miami"
     expect(page).to have_content "Max temperature"
   end
-
-  # scenario "user get 200 response from api" do
-  #   click_link 'Add a city'
-  #   fill_in 'city', with: "Miami"
-  #   click_button 'Add Favorite City'
-  #   expect(page).to have_content "Miami"
-  #   click_link "Miami"
-  #   expect(response).to have_http_status(200)
-  # end
 end

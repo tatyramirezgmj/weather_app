@@ -1,5 +1,5 @@
-<div>
-  <div class="col-sm-6 col-md-4 ">
+<div class="container favorite">
+  <div class="col-sm-8 col-md-6">
     <div class="thumbnail">
       <div class="caption">
         <h1>Add City</h1>
@@ -7,9 +7,9 @@
         <p class='errors'><%=  e %></p>
         <%end%>
         <%= form_for(@favorite) do |f|%>
-        <%= f.label :city_name %>
+        <%= f.label :city_name, "City Name:" %>
         <%= f.text_field :city_name, id: :city %>
-        <%= f.submit 'Add Favorite City' %>
+        <%= f.submit 'Add Favorite City', class: "btn btn-primary" %>
         <% end %>
 
       </div>

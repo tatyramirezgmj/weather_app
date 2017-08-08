@@ -1,3 +1,52 @@
 // Place all the styles related to the favorite_cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//add favorite city #new
+.favorite {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-left: 40%;
+}
+.favorite h1{
+  text-align: center;
+  padding-bottom: 1em;
+}
+.favorite form{
+  text-align: center;
+  font-size: 15px;
+  padding-bottom: 1em;
+}
+
+.favorite input {
+  width: 100%;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.favorite button {
+  padding-top: 1em;
+}
+
+// show favorite city info
+.show-fav{
+  display: flex;
+  text-align: center;
+}
+.show-fav h1{
+  font-size: 40px;
+  color: rgb(93, 209, 224);
+  font-weight: bold;
+}
+.show-fav h3 {
+  font-size: 30px;
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+.show-fav h4 {
+  font-size: 28px;
+  padding-bottom: 10px;
+  font-weight: 200;
+}
