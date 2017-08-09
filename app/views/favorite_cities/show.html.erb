@@ -3,7 +3,6 @@
     <div class="thumbnail">
       <div class="caption">
         <% cache("key",expires_in: 1.minutes ) do %>
-        <%= Time.now %>
         <h1><%= @favorite_city.city_name %></h1>
         <% weather_png = ('http://openweathermap.org/img/w/' + @current_weather['weather'][0]['icon'] + '.png') %>
         <%= image_tag weather_png, class:"png" %>

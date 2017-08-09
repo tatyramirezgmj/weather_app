@@ -1,7 +1,7 @@
 <div class="notice"><%= flash[:notice] %></div>
 <% cache("key",expires_in: 5.minutes) do %>
-<%= Time.now %>
-<h2 class="welcome">Welcome <%= current_user.name %></h2>
+
+<h2 class="welcome">Welcome <%= current_user.name.capitalize %></h2>
 <% current_user.favorite_cities.each do |favorite_city| %>
 <div>
   <div class="col-sm-6 col-md-4 ">
