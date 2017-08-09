@@ -1,25 +1,36 @@
 <div class="container favorite show-fav">
-  <div class="col-sm-8 col-md-6">
+  <div class="col-sm-8 col-lg-6">
     <div class="thumbnail">
+      <strong>
+        <h4>
+          <%= link_to favorite_city_path(@favorite_city, unit: (@unit == 'f' ? 'c' : 'f')) do%>
+            Change to
+            <strong>&#176;<%= "#{@unit.downcase == 'f' ? 'C' : 'F'}" %></strong>
+          <%end%>
+        </h4>
+      </strong>
       <div class="caption">
-        <% cache("key",expires_in: 1.minutes ) do %>
-        <h1><%= @favorite_city.city_name %></h1>
-        <% weather_png = ('http://openweathermap.org/img/w/' + @current_weather['weather'][0]['icon'] + '.png') %>
-        <%= image_tag weather_png, class:"png" %>
+        <% cache("key", expires_in: 1.minutes ) do %>
+          <h1><%= @favorite_city.city_name %></h1>
+          <% weather_png = ('http://openweathermap.org/img/w/' + @current_weather['weather'][0]['icon'] + '.png') %>
+          <%= image_tag weather_png, class:"png" %>
 
-        <h3> <%= @current_weather["weather"][0]["description"].capitalize!%> </h3>
+          <h3> <%= @current_weather["weather"][0]["description"].capitalize!%> </h3>
 
-        <h3> Main:</h3> <h4><%= @current_weather["weather"][0]["main"]%> </h4>
+          <h3> Main:</h3> <h4><%= @current_weather["weather"][0]["main"]%> </h4>
 
-        <h3> Current temperature: </h3> <h4> <%= @current_weather["main"]["temp"].round %> &#8457;</h4>
+          <h3> Current temperature: </h3>
+          <h4> <%= @current_weather["main"]["temp"].round %>
+            &#176;<%=@unit.upcase%>
+          </h4>
 
-        <h3> Min temperature: </h3> <h4> <%= @current_weather["main"]["temp_min"].round %> &#8457;</h4>
+          <h3> Min temperature: </h3> <h4> <%= @current_weather["main"]["temp_min"].round %> &#176;<%=@unit.upcase%></h4>
 
-        <h3> Max temperature:</h3> <h4> <%= @current_weather["main"]["temp_max"].round %> &#8457;</h4>
+          <h3> Max temperature:</h3> <h4> <%= @current_weather["main"]["temp_max"].round %> &#176;<%=@unit.upcase%></h4>
 
-        <h3> Humidity: </h3> <h4> <%= @current_weather["main"]["humidity"]%> %  </h4>
+          <h3> Humidity: </h3> <h4> <%= @current_weather["main"]["humidity"]%> %  </h4>
 
-        <h3> Wind speed: </h3> <h4><%= @current_weather["wind"]["speed"]%></h4>
+          <h3> Wind speed: </h3> <h4><%= @current_weather["wind"]["speed"]%></h4>
         <% end %>
       </div>
     </div>

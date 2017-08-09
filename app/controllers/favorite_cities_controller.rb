@@ -14,7 +14,9 @@ class FavoriteCitiesController < ApplicationController
 
   def show
     @favorite_city = current_user.favorite_cities.find(params[:id])
-    url=("http://api.openweathermap.org/data/2.5/weather?q=#{@favorite_city.city_name}&units=imperial&APPID=bfdede37a867d92c2fdf92eda5f6ab7c")
+    @unit = params[:unit].present? ? params[:unit] : 'f'
+
+    url = "http://api.openweathermap.org/data/2.5/weather?q=#{@favorite_city.city_name}&units=#{@unit == 'f' ? 'imperial' : 'metric'}&APPID=bfdede37a867d92c2fdf92eda5f6ab7c"
     @response = HTTParty.get(url)
     weather_conditions= @response.body
     @current_weather = JSON.parse(weather_conditions)
