@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
      if current_user
        true
      else
-      redirect_to root_path
+      redirect_to dashboard_path
     end
   end
 end

@@ -5,7 +5,7 @@ RSpec.feature "User Can Add Favorite Cities", type: :feature do
     name = Faker::Name.name
     email = Faker::Internet.email
     password = Faker::Book.title
-    visit "users/new"
+    visit "/"
     click_link 'Sign Up'
     fill_in 'Name', with: name
     fill_in 'Email', with: email

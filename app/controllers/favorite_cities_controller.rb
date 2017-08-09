@@ -6,7 +6,7 @@ class FavoriteCitiesController < ApplicationController
   def create
     @favorite = current_user.favorite_cities.build(favorite_params)
     if @favorite.save
-      redirect_to root_path, notice: 'Favorite city saved'
+      redirect_to dashboard_path, notice: 'Favorite city saved'
     else
       render :new
     end
@@ -25,7 +25,7 @@ class FavoriteCitiesController < ApplicationController
   def destroy
     @favorite_city = current_user.favorite_cities.find(params[:id])
     @favorite_city.destroy!
-    redirect_to root_path, notice: "Favorite city deleted"
+    redirect_to dashboard_path, notice: "Favorite city deleted"
   end
 
   private

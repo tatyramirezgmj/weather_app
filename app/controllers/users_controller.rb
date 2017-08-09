@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user= User.new(allowed_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice: 'You have succesfully sign up.'
+      redirect_to dashboard_path, notice: 'You have succesfully sign up.'
     else
       flash[:notice] = "Please check that your passwords match."
       render :new

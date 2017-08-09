@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if @user and @user.authenticate(params[:password])
       #logged in
       session[:user_id] = @user.id
-      redirect_to root_path, notice: 'You have succesfully logged in.'
+      redirect_to dashboard_path, notice: 'You have succesfully logged in.'
     else
       flash[:notice]= "Something was wrong please try again."
       render :new
