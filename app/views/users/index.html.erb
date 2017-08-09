@@ -1,4 +1,6 @@
 <div class="notice"><%= flash[:notice] %></div>
+<% cache("key",expires_in: 5.minutes) do %>
+<%= Time.now %>
 <h2 class="welcome">Welcome <%= current_user.name %></h2>
 <% current_user.favorite_cities.each do |favorite_city| %>
 <div>
@@ -7,12 +9,12 @@
       <div class="caption cities-index">
         <h1><%= link_to favorite_city.city_name, favorite_city_path(favorite_city.id) %></h1>
 
-        <h3><%=((WeatherApi.get_weather(favorite_city.city_name)["main"]["temp"] - 273) * 9 / 5 + 32).round %>&#8457;</h3>
+        <h3><%=WeatherApi.get_weather(favorite_city.city_name)["main"]["temp"].round  %>&#8457;</h3>
 
         <p><%= link_to 'Delete', favorite_city_path(favorite_city.id), :method => :delete, data: {:confirm => "You sure?"} ,:title => "Delete #{favorite_city.city_name}", class:"btn btn-default"%></p>
       </div>
     </div>
   </div>
 </div>
-
+<% end %>
 <% end %>
