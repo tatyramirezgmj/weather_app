@@ -8,8 +8,8 @@
       <div class="caption cities-index">
         <h1><%= link_to favorite_city.city_name, favorite_city_path(favorite_city.id) %></h1>
 
-        <% cache("key",expires_in: 1.minutes) do %>
-        <h3><%=WeatherApi.get_weather(favorite_city.city_name)["main"]["temp"].round  %>&#8457;</h3>
+        <% cache(favorite_city,expires_in: 1.minutes) do %>
+        <h3><%=WeatherApi.get_weather(favorite_city.city_name, @unit)["main"]["temp"].round  %>&#8451;</h3>
         <% end %>
 
         <p><%= link_to 'Delete', favorite_city_path(favorite_city.id), :method => :delete, data: {:confirm => "You sure?"} ,:title => "Delete #{favorite_city.city_name}", class:"btn btn-default"%></p>
